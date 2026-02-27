@@ -15,8 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased">
         <Navbar />
         <main>{children}</main>
-        {/* Footer will go here */}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

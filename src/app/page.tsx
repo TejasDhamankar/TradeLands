@@ -8,7 +8,7 @@ import SecurityFAQ from '@/components/sections/SecurityFAQ';
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col w-full overflow-x-hidden">
+    <div className="flex flex-col">
       {/* Visual Identity & Brand Vision */}
       <Hero />
       <About />
