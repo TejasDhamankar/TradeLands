@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         <div className="space-y-4 text-center md:text-left">
           <div className="flex items-center gap-3 justify-center md:justify-start">
             <Image
-              src="/images/logo.png"
+              src="/images/tradeland-logo.png"
               alt="TradeLands logo"
               width={40}
               height={40}
@@ -32,6 +32,7 @@ const Footer: React.FC = () => {
           <ul className="space-y-3 text-sm text-gray-300">
             <li><Link href="#about" className="hover:text-leaf-accent transition-colors">About Us</Link></li>
             <li><Link href="#plans" className="hover:text-leaf-accent transition-colors">Investment Plans</Link></li>
+            <li><Link href="#inquiry" className="hover:text-leaf-accent transition-colors">Inquiry Form</Link></li>
             <li><Link href="#projects" className="hover:text-leaf-accent transition-colors">Current Projects</Link></li>
             <li><Link href="#faq" className="hover:text-leaf-accent transition-colors">Legal Transparency</Link></li>
           </ul>

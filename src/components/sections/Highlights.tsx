@@ -12,32 +12,31 @@ const Highlights: React.FC = () => {
       transition={{ duration: 0.7, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center">
-          <div className="lg:w-1/2 relative h-[260px] sm:h-[360px] md:h-[500px] w-full rounded-3xl overflow-hidden shadow-2xl">
-            <Image 
-              src="/images/projects/highlights_summary.jpg" 
-              alt="Project Highlights" 
-              fill 
-              className="object-cover"
-            />
-          </div>
-          <div className="lg:w-1/2 space-y-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-forest-dark tracking-tight">Strategic Location & Growth</h2>
-            <div className="space-y-8">
-              <div className="flex gap-4">
-                <div className="text-2xl sm:text-3xl font-black text-leaf-accent">01</div>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold tracking-tight">Connectivity</h3>
-                  <p className="text-gray-600 text-sm sm:text-base font-medium leading-relaxed">Just 77 km from Navi Mumbai International Airport and 50 km from Atal Setu (MTHL).</p>
-                </div>
+      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen h-[500px] sm:h-[650px] md:h-[800px] overflow-hidden">
+        <Image 
+          src="/images/projects/highlights_summary.jpg" 
+          alt="Project Highlights" 
+          fill 
+          className="object-contain object-center"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 mt-16">
+        <div className="space-y-10 max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-forest-dark tracking-tight">Strategic Location & Growth</h2>
+          <div className="space-y-8">
+            <div className="flex gap-4">
+              <div className="text-2xl sm:text-3xl font-black text-leaf-accent">01</div>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold tracking-tight">Connectivity</h3>
+                <p className="text-gray-600 text-sm sm:text-base font-medium leading-relaxed">Just 77 km from Navi Mumbai International Airport and 50 km from Atal Setu (MTHL).</p>
               </div>
-              <div className="flex gap-4">
-                <div className="text-2xl sm:text-3xl font-black text-leaf-accent">02</div>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold tracking-tight">Booming Tourism</h3>
-                  <p className="text-gray-600 text-sm sm:text-base font-medium leading-relaxed">Karjat is a prime weekend getaway, creating high demand for rentals and value appreciation.</p>
-                </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="text-2xl sm:text-3xl font-black text-leaf-accent">02</div>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold tracking-tight">Booming Tourism</h3>
+                <p className="text-gray-600 text-sm sm:text-base font-medium leading-relaxed">Karjat is a prime weekend getaway, creating high demand for rentals and value appreciation.</p>
               </div>
             </div>
           </div>
