@@ -53,6 +53,14 @@ const Footer: React.FC = () => {
         <div className="text-center md:text-left">
           <h4 className="text-lg font-semibold mb-6">Connect</h4>
           <p className="text-sm text-gray-300 mb-4">Ready to build wealth backed by real assets?</p>
+          <p className="text-sm text-gray-300 mb-5">
+            <a
+              href="mailto:sales.tradelands@gmail.com"
+              className="hover:text-leaf-accent transition-colors"
+            >
+              sales.tradelands@gmail.com
+            </a>
+          </p>
           <Link 
             href="https://www.tradelands.in" 
             className="inline-block bg-leaf-accent text-forest-dark px-6 py-2 rounded-full font-bold text-sm hover:bg-white transition-colors"
