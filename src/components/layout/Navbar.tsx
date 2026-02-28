@@ -16,20 +16,20 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 px-6 py-4 ${
-      isScrolled ? 'bg-forest-dark/80 backdrop-blur-md shadow-2xl py-3 border-b border-white/10' : 'bg-transparent'
+    <nav className={`fixed w-full z-50 transition-all duration-300 px-4 md:px-6 py-2 md:py-3 ${
+      isScrolled ? 'bg-forest-dark/80 backdrop-blur-md shadow-2xl py-2 md:py-3 border-b border-white/10' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-3 text-white text-2xl font-bold tracking-tighter">
+        <Link href="/" className="flex items-center gap-2 md:gap-3 text-white text-xl md:text-2xl font-bold tracking-tighter min-w-0">
           <Image
-            src="/images/logo.png"
+            src="/images/tradeland-logo.png"
             alt="TradeLands logo"
             width={88}
             height={88}
-            className="h-16 w-16 md:h-20 md:w-20"
+            className="h-10 w-auto md:h-12 md:w-auto"
             priority
           />
-          <span>
+          <span className="truncate">
             TRADELANDS<span className="text-leaf-accent">IND</span>
           </span>
         </Link>
@@ -38,6 +38,7 @@ const Navbar: React.FC = () => {
           <Link href="#about" className="hover:text-leaf-accent transition-colors">About Us</Link>
           <Link href="#projects" className="hover:text-leaf-accent transition-colors">Projects</Link>
           <Link href="#plans" className="hover:text-leaf-accent transition-colors">Investment Plans</Link>
+          <Link href="#inquiry" className="hover:text-leaf-accent transition-colors">Inquiry</Link>
           <Link href="#faq" className="hover:text-leaf-accent transition-colors">Legal & FAQ</Link>
         </div>
 
@@ -48,7 +49,7 @@ const Navbar: React.FC = () => {
         </div>
 
         <button
-          className="md:hidden text-white border border-white/30 rounded-full px-4 py-2 text-sm font-bold"
+          className="md:hidden shrink-0 text-white border border-white/30 rounded-full px-4 py-2 text-sm font-bold"
           onClick={() => setIsOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -62,6 +63,7 @@ const Navbar: React.FC = () => {
             <Link href="#about" className="hover:text-leaf-accent transition-colors" onClick={() => setIsOpen(false)}>About Us</Link>
             <Link href="#projects" className="hover:text-leaf-accent transition-colors" onClick={() => setIsOpen(false)}>Projects</Link>
             <Link href="#plans" className="hover:text-leaf-accent transition-colors" onClick={() => setIsOpen(false)}>Investment Plans</Link>
+            <Link href="#inquiry" className="hover:text-leaf-accent transition-colors" onClick={() => setIsOpen(false)}>Inquiry</Link>
             <Link href="#faq" className="hover:text-leaf-accent transition-colors" onClick={() => setIsOpen(false)}>Legal & FAQ</Link>
             <Link href="#about" className="bg-white text-forest-dark px-4 py-2 rounded-full font-bold text-sm text-center hover:bg-leaf-accent transition-colors" onClick={() => setIsOpen(false)}>
               Learn More

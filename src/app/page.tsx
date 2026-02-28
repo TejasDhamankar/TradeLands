@@ -2,8 +2,10 @@ import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
 import Highlights from '@/components/sections/Highlights';
 import InvestmentPlans from '@/components/sections/InvestmentPlans';
+import LocationSection from '@/components/sections/LocationSection';
 import ProjectShowcase from '@/components/sections/ProjectShowcase';
 import MarketResearch from '@/components/sections/MarketResearch';
+import InquirySection from '@/components/sections/InquirySection';
 import SecurityFAQ from '@/components/sections/SecurityFAQ';
 
 export default function LandingPage() {
@@ -18,6 +20,10 @@ export default function LandingPage() {
       
       {/* Financial Opportunities */}
       <InvestmentPlans />
+
+      {/* Prime Location */}
+      <LocationSection />
+
       
       {/* Location & Infrastructure Growth */}
       <Highlights />
@@ -27,6 +33,9 @@ export default function LandingPage() {
       
       {/* Final Legal & Transparency Check */}
       <SecurityFAQ />
+
+      {/* Direct Inquiry */}
+      <InquirySection />
     </div>
   );
 }

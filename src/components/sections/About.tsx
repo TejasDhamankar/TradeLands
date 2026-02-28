@@ -20,7 +20,7 @@ const About: React.FC = () => {
           </h2>
           <div className="space-y-5 text-base sm:text-lg text-gray-700 leading-relaxed font-medium">
             <p className="font-semibold italic border-l-4 border-forest-light pl-4 tracking-tight">
-              "TradeLands is where confidence is built on land, not on promises."
+              &quot;TradeLands is where confidence is built on land, not on promises.&quot;
             </p>
             <p>
               It transforms land into opportunity. Opportunity into structured growth.
