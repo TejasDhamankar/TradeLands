@@ -8,6 +8,7 @@ const MarketResearch: React.FC = () => {
     { type: 'Gold', returns: '6%-9% (Expected)', risk: 'Medium' },
     { type: 'Fixed Deposit / Debt', returns: '6%-7% (Expected)', risk: 'Low' },
     { type: 'Real Estate (Land)', returns: '15%-20% (Expected)', risk: 'Low', highlight: true },
+    { type: 'TradeLands (Fixed Return Model)', returns: '18% to 25.75% (Fixed Return)', risk: 'Zero Risk', highlight: true },
   ];
 
   return (

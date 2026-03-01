@@ -39,6 +39,20 @@ const Highlights: React.FC = () => {
                 <p className="text-gray-600 text-sm sm:text-base font-medium leading-relaxed">Karjat is a prime weekend getaway, creating high demand for rentals and value appreciation.</p>
               </div>
             </div>
+            <div className="flex gap-4">
+              <div className="text-2xl sm:text-3xl font-black text-leaf-accent">03</div>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold tracking-tight">Infrastructure Development</h3>
+                <p className="text-gray-600 text-sm sm:text-base font-medium leading-relaxed">Karjat is witnessing steady infrastructure growth, including improved road connectivity, transport access, and civic development — driving strong long-term property value appreciation.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="text-2xl sm:text-3xl font-black text-leaf-accent">04</div>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold tracking-tight">Strategic Connectivity</h3>
+                <p className="text-gray-600 text-sm sm:text-base font-medium leading-relaxed">Just 77 km from Navi Mumbai International Airport, 50 km from Atal Setu (MTHL), and 20 km from Karjat Railway Station — offering seamless access to Mumbai, Pune, and upcoming infrastructure corridors.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

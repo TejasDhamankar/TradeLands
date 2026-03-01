@@ -1,83 +1,66 @@
-
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
-    <footer className="bg-forest-dark text-white pt-12 md:pt-16 pb-8 px-6 border-t border-leaf-accent/20">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
-        {/* Brand Section */}
-        <div className="space-y-4 text-center md:text-left">
-          <div className="flex items-center gap-3 justify-center md:justify-start">
-            <Image
-              src="/images/tradeland-logo.png"
-              alt="TradeLands logo"
-              width={40}
-              height={40}
-              className="h-10 w-10 rounded-full bg-white/90 p-1"
-            />
-            <h3 className="text-2xl font-bold tracking-tighter">
-              TRADELANDS<span className="text-leaf-accent">IND</span>
-            </h3>
+    <footer className="bg-[#F8FAF9] text-gray-700 px-8 py-16 rounded-t-[40px] shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          {/* Column 1: Logo and Brand */}
+          <div>
+            <div className="mb-4">
+              <Image src="/images/tradeland-logo.png" alt="TradeLands Logo" width={150} height={50} />
+            </div>
+            <p className="text-sm mb-6">
+              TradeLands is a real estate-based asset transaction platform for serious investors looking to build structured returns.
+            </p>
+           
           </div>
-          <p className="text-leaf-accent/70 text-sm leading-relaxed">
-            A structured real estate growth engine designed for investors who want security, clarity, and powerful returns.
-          </p>
+
+          {/* Column 2: Explore */}
+          <div>
+            <h3 className="text-gray-900 font-semibold mb-4">Explore</h3>
+            <ul className="space-y-3">
+              <li><Link href="/about" className="text-gray-600 hover:text-green-600 transition">About Us</Link></li>
+              <li><Link href="/investment-plans" className="text-gray-600 hover:text-green-600 transition">Investment Plans</Link></li>
+              <li><Link href="/inquiry" className="text-gray-600 hover:text-green-600 transition">Inquiry Form</Link></li>
+              <li><Link href="/projects" className="text-gray-600 hover:text-green-600 transition">Projects</Link></li>
+              <li><Link href="/legal" className="text-gray-600 hover:text-green-600 transition">Legal Transparency</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 3: Focus Areas */}
+          <div>
+            <h3 className="text-gray-900 font-semibold mb-4">Focus Areas</h3>
+            <ul className="space-y-3">
+              <li><Link href="/focus/mumbai-3" className="text-gray-600 hover:text-green-600 transition">Mumbai 3.0</Link></li>
+              <li><Link href="/focus/pune-region" className="text-gray-600 hover:text-green-600 transition">Pune Region</Link></li>
+              <li><Link href="/focus/nagpur-nashik" className="text-gray-600 hover:text-green-600 transition">Nagpur & Nashik</Link></li>
+              <li><Link href="/focus/karjat" className="text-gray-600 hover:text-green-600 transition">Karjat</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 4: Connect */}
+          <div>
+            <h3 className="text-gray-900 font-semibold mb-4">Connect</h3>
+            <p className="text-sm mb-4">
+              Begin your journey towards structured real estate returns.
+            </p>
+            <p className="text-green-600 mb-4">contact@tradelands.com</p>
+            <button className="bg-green-500 text-white rounded-full px-6 py-3 font-semibold hover:bg-green-600 transition-colors w-full text-center shadow-md">
+              Get Started
+            </button>
+          </div>
         </div>
 
-        {/* Quick Links */}
-        <div className="text-center md:text-left">
-          <h4 className="text-lg font-semibold mb-6">Explore</h4>
-          <ul className="space-y-3 text-sm text-gray-300">
-            <li><Link href="#about" className="hover:text-leaf-accent transition-colors">About Us</Link></li>
-            <li><Link href="#plans" className="hover:text-leaf-accent transition-colors">Investment Plans</Link></li>
-            <li><Link href="#inquiry" className="hover:text-leaf-accent transition-colors">Inquiry Form</Link></li>
-            <li><Link href="#projects" className="hover:text-leaf-accent transition-colors">Current Projects</Link></li>
-            <li><Link href="#faq" className="hover:text-leaf-accent transition-colors">Legal Transparency</Link></li>
-          </ul>
-        </div>
-
-        {/* Locations Section */}
-        <div className="text-center md:text-left">
-          <h4 className="text-lg font-semibold mb-6">Our Focus Areas</h4>
-          <ul className="space-y-3 text-sm text-gray-300">
-            <li>Mumbai 3.0</li>
-            <li>Pune Regions</li>
-            <li>Nagpur & Nashik</li>
-            <li>Karjat (Prime Destination)</li>
-          </ul>
-        </div>
-
-        {/* Contact/CTA */}
-        <div className="text-center md:text-left">
-          <h4 className="text-lg font-semibold mb-6">Connect</h4>
-          <p className="text-sm text-gray-300 mb-4">Ready to build wealth backed by real assets?</p>
-          <p className="text-sm text-gray-300 mb-5">
-            <a
-              href="mailto:sales.tradelands@gmail.com"
-              className="hover:text-leaf-accent transition-colors"
-            >
-              sales.tradelands@gmail.com
-            </a>
-          </p>
-          <Link 
-            href="https://www.tradelands.in" 
-            className="inline-block bg-leaf-accent text-forest-dark px-6 py-2 rounded-full font-bold text-sm hover:bg-white transition-colors"
-          >
-            Visit Official Portal
-          </Link>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="max-w-7xl mx-auto mt-12 md:mt-16 pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-gray-400">
-          © {new Date().getFullYear()} TradeLands. This is a real estate asset-based transaction, not a financial product.
-        </p>
-        <div className="flex space-x-6 text-xs text-gray-400">
-          <Link href="/terms" className="hover:text-white">Terms & Conditions</Link>
-          <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
+        {/* Bottom section */}
+        <div className="border-t border-gray-200 flex flex-col md:flex-row justify-between items-center text-sm pt-8 mt-12">
+          <p className="mb-4 md:mb-0 text-gray-500">© 2026 TradeLands. Real estate asset-based transaction.</p>
+          <div className="flex space-x-6">
+            <Link href="/terms" className="text-gray-600 hover:text-green-600 transition">Terms & Conditions</Link>
+            <Link href="/privacy" className="text-gray-600 hover:text-green-600 transition">Privacy Policy</Link>
+          </div>
         </div>
       </div>
     </footer>

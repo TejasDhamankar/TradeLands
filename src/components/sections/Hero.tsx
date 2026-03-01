@@ -1,87 +1,51 @@
-// src/components/sections/Hero.tsx
 "use client";
-import Image from 'next/image';
-import React, { useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
-  const { scrollY } = useScroll();
-  const bgY = useTransform(scrollY, [0, 600], [0, 80]);
-  const [videoFailed, setVideoFailed] = useState(false);
-
   return (
-    <section className="relative min-h-[85vh] md:min-h-screen w-full flex items-center justify-start overflow-hidden">
-      {/* Background video with fallback image */}
-      <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
-        {!videoFailed ? (
-          <video
-            className="absolute inset-0 h-full w-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/images/trees_hero_bg.jpg"
-            onError={() => setVideoFailed(true)}
-          >
-            <source src="https://res.cloudinary.com/dsclbu0eh/video/upload/v1772284603/Trade_Lands_1080P_tb7lnf.mp4" type="video/mp4" />
-          </video>
-        ) : (
-          <Image
-            src="/images/trees_hero_bg.jpg"
-            alt="TradeLands Lush Forest Canopy"
-            fill
-            priority
-            quality={100}
-            sizes="100vw"
-            className="object-cover object-[center_20%]"
-          />
-        )}
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-forest-dark/35" />
-      </motion.div>
+    <section className="relative min-h-screen w-full overflow-hidden">
+      
+      {/* Background and Overlay Layer */}
+      <div className="absolute inset-0 -z-10">
+        <img
+          src="/images/trees_hero_bg.jpg"
+          alt="Hero Background"
+          // object-cover ensures it fills the area without distortion
+          className="h-full w-full object-cover"
+        />
+        {/* Removed backdrop-blur to keep image original and clear */}
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
 
-      {/* Hero Content aligned with PDF messaging */}
-      <motion.div
-        className="relative z-10 text-left px-6 md:px-10 lg:px-14"
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <div className="max-w-lg space-y-3">
-          <h1
-            className="text-white text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight"
-          >
-            TradeLands<span className="text-leaf-accent">.</span>
+      {/* Content Layer */}
+      <div className="relative z-10 flex items-center justify-center min-h-screen text-center px-6">
+        <motion.div
+          className="max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+            Invest in Mumbai's Growth with <span className="bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent">secured land</span>.
           </h1>
-          <p
-            className="text-leaf-accent text-xs sm:text-sm font-semibold uppercase tracking-[0.22em]"
-          >
-            Smart Investment, High Returns
-          </p>
           
-          <div className="space-y-3">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-white leading-tight">
-              Invest in Mumbai&apos;s Growth with <span className="text-leaf-accent">secured land</span>.
-            </h2>
-
-            <p className="text-white/85 text-sm sm:text-base leading-relaxed max-w-md">
-              Fixed returns up to 25.75% p.a., backed by registered plots in Karjat and Mumbai&apos;s emerging corridors.
-            </p>
+          <p className="mt-6 text-lg md:text-xl text-gray-200 leading-relaxed">
+            Fixed returns up to 25.75% p.a., backed by registered plots in Karjat and Mumbai's emerging corridors. A structured real estate growth engine designed for investors who want security, clarity, and powerful returns.
+          </p>
             
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-start pt-1">
-              <a href="#about" className="w-full sm:w-auto bg-forest-light hover:bg-forest-base text-white px-6 sm:px-8 py-3 rounded-full text-sm sm:text-base font-bold transition-all transform hover:scale-105 shadow-2xl">
-                Why TradeLands
-              </a>
-              <a href="#plans" className="w-full sm:w-auto bg-white/10 border border-white/30 text-white px-6 sm:px-8 py-3 rounded-full text-sm sm:text-base font-bold hover:bg-white/15 transition-all">
-                See Plans
-              </a>
-            </div>
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
+            <a href="#about" className="w-full sm:w-auto bg-green-700 hover:bg-green-800 text-white px-10 py-3 rounded-full text-base font-bold transition-transform hover:scale-105">
+              Learn More
+            </a>
+            <a href="#plans" className="w-full sm:w-auto bg-white/10 border border-white/30 text-white px-10 py-3 rounded-full text-base font-bold hover:bg-white/20 transition-transform hover:scale-105">
+              See Investment Plans
+            </a>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };
 
 export default Hero;
-

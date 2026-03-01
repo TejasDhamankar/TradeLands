@@ -16,7 +16,7 @@ export default function LayoutChrome({ children }: LayoutChromeProps) {
     <>
       {!hideNavbar && <Navbar />}
       <main>{children}</main>
-      <Footer />
+       
     </>
   );
 }
