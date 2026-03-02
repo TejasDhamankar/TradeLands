@@ -2,6 +2,30 @@
 import React, { FormEvent, useState } from 'react';
 import { motion } from 'framer-motion';
 
+const AccordionSection: React.FC<{
+  sectionNumber: number;
+  title: string;
+  isOpen: boolean;
+  onToggle: (section: number) => void;
+  children: React.ReactNode;
+}> = ({ sectionNumber, title, isOpen, onToggle, children }) => (
+  <div className="border border-gray-200 rounded-xl mb-4 overflow-hidden transition-all duration-300">
+    <button
+      type="button"
+      onClick={() => onToggle(sectionNumber)}
+      className="w-full flex justify-between items-center p-4 font-semibold text-left text-forest-dark"
+    >
+      <span className="text-lg">{sectionNumber}. {title}</span>
+      <span className="text-2xl text-green-700">{isOpen ? '-' : '+'}</span>
+    </button>
+    <div className={isOpen ? 'block' : 'hidden'}>
+      <div className="p-4 border-t border-gray-200 bg-white">
+        {children}
+      </div>
+    </div>
+  </div>
+);
+
 const InquirySection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -137,28 +161,6 @@ const InquirySection: React.FC = () => {
     }
   };
 
-  const AccordionSection: React.FC<{
-    sectionNumber: number;
-    title: string;
-    children: React.ReactNode;
-  }> = ({ sectionNumber, title, children }) => (
-    <div className="border border-gray-200 rounded-xl mb-4 overflow-hidden transition-all duration-300">
-      <button
-        type="button"
-        onClick={() => toggleSection(sectionNumber)}
-        className="w-full flex justify-between items-center p-4 font-semibold text-left text-forest-dark"
-      >
-        <span className="text-lg">{sectionNumber}. {title}</span>
-        <span className="text-2xl text-green-700">{openSections.includes(sectionNumber) ? '-' : '+'}</span>
-      </button>
-      <div className={openSections.includes(sectionNumber) ? 'block' : 'hidden'}>
-        <div className="p-4 border-t border-gray-200 bg-white">
-          {children}
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <motion.section
       id="inquiry"
@@ -174,7 +176,12 @@ const InquirySection: React.FC = () => {
         </div>
 
         <form onSubmit={handleSubmit}>
-          <AccordionSection sectionNumber={1} title="Personal Details">
+          <AccordionSection
+            sectionNumber={1}
+            title="Personal Details"
+            isOpen={openSections.includes(1)}
+            onToggle={toggleSection}
+          >
             <input
               type="text"
               name="fullName"
@@ -217,7 +224,12 @@ const InquirySection: React.FC = () => {
             />
           </AccordionSection>
 
-          <AccordionSection sectionNumber={2} title="Select Your Investment Plan*">
+          <AccordionSection
+            sectionNumber={2}
+            title="Select Your Investment Plan*"
+            isOpen={openSections.includes(2)}
+            onToggle={toggleSection}
+          >
             <div className="space-y-3">
               <label className="flex items-start gap-3 p-3 rounded-lg hover:bg-green-50/50">
                 <input type="radio" name="investmentPlan" value="plan-a" className="mt-1" checked={formData.investmentPlan === 'plan-a'} onChange={handleChange} />
@@ -230,7 +242,12 @@ const InquirySection: React.FC = () => {
             </div>
           </AccordionSection>
 
-          <AccordionSection sectionNumber={3} title="Investment Amount Status*">
+          <AccordionSection
+            sectionNumber={3}
+            title="Investment Amount Status*"
+            isOpen={openSections.includes(3)}
+            onToggle={toggleSection}
+          >
             <div className="space-y-3">
               <label className="flex items-start gap-3 p-3 rounded-lg hover:bg-green-50/50">
                 <input type="radio" name="investmentStatus" value="ready" className="mt-1" checked={formData.investmentStatus === 'ready'} onChange={handleChange} />
@@ -247,7 +264,12 @@ const InquirySection: React.FC = () => {
             </div>
           </AccordionSection>
           
-          <AccordionSection sectionNumber={4} title="When Are You Planning to Invest?*">
+          <AccordionSection
+            sectionNumber={4}
+            title="When Are You Planning to Invest?*"
+            isOpen={openSections.includes(4)}
+            onToggle={toggleSection}
+          >
             <div className="space-y-3">
               <label className="flex items-start gap-3 p-3 rounded-lg hover:bg-green-50/50">
                 <input type="radio" name="investmentTimeline" value="7-days" className="mt-1" checked={formData.investmentTimeline === '7-days'} onChange={handleChange} />
@@ -268,7 +290,12 @@ const InquirySection: React.FC = () => {
             </div>
           </AccordionSection>
 
-          <AccordionSection sectionNumber={5} title="Purpose of Investment">
+          <AccordionSection
+            sectionNumber={5}
+            title="Purpose of Investment"
+            isOpen={openSections.includes(5)}
+            onToggle={toggleSection}
+          >
             <div className="space-y-3">
               <label className="flex items-start gap-3 p-3 rounded-lg hover:bg-green-50/50">
                 <input type="radio" name="investmentPurpose" value="monthly-income" className="mt-1" checked={formData.investmentPurpose === 'monthly-income'} onChange={handleChange} />
@@ -289,7 +316,12 @@ const InquirySection: React.FC = () => {
             </div>
           </AccordionSection>
 
-          <AccordionSection sectionNumber={6} title="Preferred Contact Time">
+          <AccordionSection
+            sectionNumber={6}
+            title="Preferred Contact Time"
+            isOpen={openSections.includes(6)}
+            onToggle={toggleSection}
+          >
             <div className="space-y-3">
               <label className="flex items-start gap-3 p-3 rounded-lg hover:bg-green-50/50">
                 <input type="radio" name="contactTime" value="morning" className="mt-1" checked={formData.contactTime === 'morning'} onChange={handleChange} />
