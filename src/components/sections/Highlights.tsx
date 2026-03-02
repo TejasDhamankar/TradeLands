@@ -14,7 +14,7 @@ const Highlights: React.FC = () => {
     >
       <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen h-[500px] sm:h-[650px] md:h-[800px] overflow-hidden">
         <Image 
-          src="/images/projects/highlights_summary.jpg" 
+          src="/images/projects/element2.png" 
           alt="Project Highlights" 
           fill 
           className="object-contain object-center"

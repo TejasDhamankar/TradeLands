@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center relative">
           <Link href="/" className="flex items-center gap-2 md:gap-3 text-white text-xl md:text-2xl font-bold tracking-tighter min-w-0 z-50 pl-2 md:pl-0">
           <Image
-            src="/images/tradeland-logo.png"
+            src="/images/tradeland-logo_white.png"
             alt="TradeLands logo"
             width={88}
             height={88}
@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
           
           {/* Mobile Centered Brand Text */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:hidden">
-            <span className="text-white text-lg font-bold tracking-tighter">
+            <span className="text-white text-2xl font-bold tracking-tighter">
               TRADELANDS<span className="text-leaf-accent">IND</span>
             </span>
           </div>
